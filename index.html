@@ -3,52 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <title>Roco69XD</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            position: relative;
+            background-color: black; /* Set the background color to black */
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
+        .background {
             position: fixed;
-            bottom: 0;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: white;
+        }
+
+        .background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('path/to/your-background-image.jpg') center/cover fixed;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        .background::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(30, 87, 153, 0.7), rgba(30, 87, 153, 0.7), rgba(0, 0, 0, 0.7));
+            animation: colorChange 10s infinite alternate-reverse;
+            z-index: -1;
+        }
+
+        @keyframes colorChange {
+            0%, 100% {
+                background: linear-gradient(45deg, rgba(30, 87, 153, 0.7), rgba(30, 87, 153, 0.7), rgba(0, 0, 0, 0.7));
+            }
+            50% {
+                background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(30, 87, 153, 0.7));
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Roco69XD.github.io</h1>
-    </header>
+    <div class="background"></div>
 
-    <section>
-        <h2>Welcome to my goofy ass website</h2>
-        <p>This is placeholder text</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Roco69XD. All rights reserved.</p>
-    </footer>
+    <div class="content">
+        <h1>Epic test 1</h1>
+        <p>I am testing my html/css skills frfr.</p>
+    </div>
 
 </body>
 </html>
